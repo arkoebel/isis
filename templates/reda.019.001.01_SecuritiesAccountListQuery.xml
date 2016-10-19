@@ -1,0 +1,17 @@
+<Document xmlns="urn:eurosystem:xsd:reda.019.001.01">
+  <SctiesAcctQry>
+    <MsgHdr>
+      <MsgId>1234567890ABCDEF</MsgId>
+      <ReqTp>
+        <Prtry>
+          <Id>SALI</Id>
+          <SchmeNm>SACQ</SchmeNm>
+          <Issr>T2S</Issr>
+        </Prtry>
+      </ReqTp>
+    </MsgHdr>
+    <SchCrit>
+      <AcctSvcr>SOGEFRP0T2S</AcctSvcr>
+    </SchCrit>
+  </SctiesAcctQry>
+</Document>

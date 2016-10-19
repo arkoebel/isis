@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Isis broadcast</title>
+        <script type='text/javascript' src='jquery.js'></script>
+        <script type='text/javascript'>
+        jQuery(document).ready(function(){
+          $.get('getBroadcasts.php',null,getBroadcasts,'json');     
+          $.get('getConf.php',null,getConfs,'json');     
+          $("#select").change(getBroadcast);
+          $("#go").click(getOutput);
+        });
+
+        function getBroadcasts(res){
+            var option = '<option value="-1">Select</option>';
+            $.each(res,function(i,d){
+                //option += '<option>'+d.name+'<\/option>';
+                option += '<option value="' + i + '">'+d.name+'<\/option>';
+            });
+            $("#select").html(option);
+
+        };
+ 
+        function getConfs(res){
+            var option = '<option value="-1">Select</option>';
+            $.each(res,function(i,d){
+                option += '<option value="' + i + '">'+d.name+'<\/option>';
+            });
+            $("#selectconf").html(option);
+
+        };
+
+        function getBroadcast(){
+            $.get('getBroadcast.php?name='+$("#select option:selected").text(),null,getparams,'json');
+        };
+
+        function getparams(res){
+            $("#type").val(res.resp);
+            var attr='';
+            $.each(res.attr,function(name,value){
+
+                attr += '<tr><td>' + name + '</td><td><input name="' + name + '" value="' + value + '"/></td></tr>';
+            });
+            $("#attrib").html(attr);
+         };
+         function getOutput(){
+            var output = {type: "", conf:"", number: "", attr: {}};
+            output.type = $("#select option:selected").text();
+            output.conf = $("#selectconf option:selected").text();
+            output.number = $("#number").text();
+            $("#attrib tr td input").each(function(){
+                 output.attr[$(this).attr("name")] = $(this).attr("value");
+            });
+            $.ajaxSetup({
+                contentType: "application/json; charset=utf-8"
+            });
+            $.post("inject.php",JSON.stringify(output),function(res){alert(res)},"json");
+         };
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="2"><select id="selectconf"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><select id="select"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="type"/>
+                </td>
+                <td>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attrib">
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Repeat Number : </td>
+                <td><input id="number" value="1"/></td>
+            </tr>
+            <tr>
+                <td><button id="go">Send</button></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+

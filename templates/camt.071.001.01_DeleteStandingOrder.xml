@@ -1,0 +1,19 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.071.001.01">
+	<DelStgOrdr>
+		<MsgHdr>
+			<MsgId>LTOC MsgRef</MsgId>
+		</MsgHdr>
+		<StgOrdrDtls>
+			<StgOrdr>
+				<Id>REFERENCE5</Id>
+				<Acct>
+					<Id>
+						<Othr>
+							<Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+						</Othr>
+					</Id>
+				</Acct>
+			</StgOrdr>
+		</StgOrdrDtls>
+	</DelStgOrdr>
+</Document>

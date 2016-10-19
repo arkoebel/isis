@@ -1,0 +1,14 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT4reda.025.001.01">
+  <ElgblSctiesCreReq>
+    <MsgId>
+      <Id>1234567890ABCDEF</Id>
+    </MsgId>
+    <ElgblScty>
+      <SctyId>XXABCDEFGHIJ</SctyId>
+      <CollstnCcy>EUR</CollstnCcy>
+      <PtyId>
+        <NCBId>BDFEFRP0T2S</NCBId>
+      </PtyId>
+    </ElgblScty>
+  </ElgblSctiesCreReq>
+</Document>

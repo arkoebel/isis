@@ -1,0 +1,483 @@
+{
+        "errorTemplate": "genericError.xml",
+	"camt": [{
+		"query": "ssp.cm.GetTransaction.camt.005.001.05.xsd",
+		"responseFormat": "ssp.cm.ReturnTransactioncamt.006.001.05.xsd",
+		"responseTemplate": "ssp.cm.ReturnTransactioncamt.006.001.05.xml",
+		"parameters": {
+			"id": "/u:Document/u:GetTx/u:MsgHdr/u:MsgId"
+		}
+	},
+	{
+		"query": "ssp.GetSystemTime.camt.998.001.03.xsd",
+		"responseFormat": "ssp.ReturnSystemTime.camt.998.001.03.xsd",
+		"responseTemplate": "ssp.ReturnSystemTime.camt.998.001.03.xml",
+		"parameters": {
+			"id": "/u:Document/u:PrtryMsg/u:MsgHdr/u:MsgId"
+		}
+	},
+        {
+                "query": "ssp.GetSystemTime.camt.998.001.02.xsd",
+                "queryMatch": "tot[a-z]",
+                "responseFormat": "ssp.ReturnSystemTime.camt.998.001.02.xsd",
+                "responseTemplate": "ssp.ReturnSystemTime.camt.998.001.02.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "displayError": "Off",
+                "parameters": {
+                        "id": "/u:Document/u:PrtryMsg/u:MsgId/u:Ref"
+                }
+        },
+        {
+                "query": "ssp.GetSystemTime.camt.998.001.02.xsd",
+                "queryMatch": "toxt[a-z]",
+                "responseFormat": "ssp.ReturnSystemTime.camt.998.001.03.xsd",
+                "responseTemplate": "ssp.ReturnSystemTime.camt.998.001.03.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "displayError": "Off",
+                "parameters": {
+                        "id": "/u:Document/u:PrtryMsg/u:MsgId/u:Ref"
+                }
+        },
+	{
+		"query": "ssp.GetTask.camt.998.001.03.xsd",
+		"responseFormat": "ssp.ReturnTask.camt.998.001.03.xsd",
+		"responseTemplate": "ssp.ReturnTask.camt.998.001.03.xml",
+		"parameters": {
+			"id": "/u:Document/u:PrtryMsg/u:MsgHdr/u:MsgId"
+		}
+	},
+        {
+                "query": "ssp.pm.GetAccount.camt.003.001.05.xsd",
+                "responseFormat": "ssp.pm.ReturnAccount.camt.004.001.05.xsd",
+                "responseTemplate": "ssp.pm.ReturnAccount.camt.004.001.05.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetAcct/u:MsgHdr/u:MsgId",
+                        "bic": "/u:Document/u:GetAcct/u:AcctQryDef/u:AcctCrit/u:NewCrit/u:SchCrit/u:AcctOwnr/u:Id/u:OrgId/u:AnyBIC"
+                }
+        },
+	{
+		"query": "ssp.cm.GetAccount.camt.003.001.05.xsd",
+		"responseFormat": "ssp.cm.ReturnAccount.camt.004.001.05.xsd",
+		"responseTemplate": "ssp.cm.ReturnAccount.camt.004.001.05.xml",
+		"parameters": {
+			"id": "/u:Document/u:GetAcct/u:MsgHdr/u:MsgId",
+			"bic": "/u:Document/u:GetAcct/u:AcctQryDef/u:AcctCrit/u:NewCrit/u:SchCrit/u:AcctOwnr/u:Id/u:OrgId/u:AnyBIC"
+		}
+	},
+	{
+		"query": "t2s.GetCashAccountDetails.acmt.025.001.01.xsd",
+		"queryMatch": "CASH",
+		"errorTemplate": "errorTemplate.xml",
+                "responseFormat": "t2s.ReturnCashAccountDetails.acmt.026.001.01.xsd",
+		"responseTemplate": "acmt.026.001.01_CashAccountsDetailsResponse.xml",
+		"parameters": {
+			"id": "/u:Document/u:AcctQryList/u:Refs/u:MsgId/u:Id",
+			"bic": "/u:Document/u:AcctQryList/u:AcctSvcrId/u:FinInstnId/u:BIC"
+		}
+	},
+	{
+                "query": "t2s.GetCashAccountDetails.acmt.025.001.01.xsd",
+                "queryMatch": "LIST",
+                "responseFormat": "t2s.ReturnCashAccountDetails.acmt.026.001.01.xsd",
+                "responseTemplate": "acmt.026.001.01_CashAccountsListResponse.xml",
+                "parameters": {
+                        "id": "/u:Document/u:AcctQryList/u:Refs/u:MsgId/u:Id",
+                        "bic": "/u:Document/u:AcctQryList/u:AcctSvcrId/u:FinInstnId/u:BIC"
+                }
+        },
+	{
+                "query": "t2s.ReportQueryRequest.DRAFT3admi.005.001.01.xsd",
+		"responseFormat": ["t2s.BankToCustomerStatement.camt.053.001.03.xsd","t2s.BankToCustomerAccountReport.camt.052.001.03.xsd","t2s.BankToCustomerAccountReport.camt.052.001.03.xsd"],
+                "responseTemplate": ["camt.053.001.03_BankToCustomerStatement.xml","camt.052.001.03_CurrentSettlementDayCashInformationReport.xml","camt.052.001.03_FollowingSettlementDayCashInformationReport.xml"],
+		"errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:RptQryReq/u:MsgHdr/u:MsgId",
+                        "bic": "/u:Document/u:RptQryReq/u:RptQryCrit/u:SchCrit/u:PtyId/u:AnyBIC"
+                }
+        },
+	{
+                "query": "t2s.PartyListQuery.DRAFT3reda.015.001.01.xsd",
+                "queryMatch": "PYLI",
+                "responseFormat": "t2s.PartyListResponse.DRAFT3reda.017.001.01.xsd",
+                "responseTemplate": "reda.017.001.01_PartyListResponse.xml",
+		"errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:PtyQry/u:MsgId/u:MsgId",
+                        "bic": "/u:Document/u:PtyQry/u:SchCrit/u:CSDOrNCB/u:NCBId"
+                }
+        },
+        {
+                "query": "t2s.PartyListQuery.DRAFT3reda.015.001.01.xsd",
+                "queryMatch": "PTYQ",
+                "responseFormat": "t2s.PartyListResponse.DRAFT3reda.017.001.01.xsd",
+                "responseTemplate": "reda.017.001.01_PartyDetailsResponse.xml",
+		"errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:PtyQry/u:MsgId/u:MsgId",
+                        "bic": "/u:Document/u:PtyQry/u:SchCrit/u:CSDOrNCB/u:NCBId"
+                }
+        },
+        {
+                "query": "t2s.SecuritiesAccountListQuery.DRAFT5reda.019.001.01.xsd",
+                "queryMatch": "SALI",
+                "responseFormat": "t2s.SecuritiesAccountListResponse.DRAFT6reda.021.001.01.xsd",
+                "responseTemplate": "reda.021.001.01_SecuritiesAccountListResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:SctiesAcctQry/u:MsgHdr/u:MsgId",
+                        "bic": "/u:Document/u:SctiesAcctQry/u:SchCrit/u:AcctSvcr"
+                }
+        },
+        {
+                "query": "t2s.SecuritiesAccountListQuery.DRAFT5reda.019.001.01.xsd",
+                "queryMatch": "SARD",
+                "responseFormat": "t2s.SecuritiesAccountListResponse.DRAFT6reda.021.001.01.xsd",
+                "responseTemplate": "reda.021.001.01_SecuritiesAccountDetailsResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:SctiesAcctQry/u:MsgHdr/u:MsgId",
+                        "bic": "/u:Document/u:SctiesAcctQry/u:SchCrit/u:AcctSvcr"
+                }
+        },
+        {
+                "query": "t2s.AccountLinkCreationRequest.DRAFT2reda.049.001.01.xsd",
+                "queryMatch": "COMP",
+                "responseFormat": ["t2s.AccountLinkCreationRequest.DRAFT2reda.051.001.01.xsd","t2s.AccountLinkCreationRequest.DRAFT2reda.051.001.01.xsd"],
+                "responseTemplate": ["reda.051.001.01_AccountLinkStatusAdvice_QUED.xml","reda.051.001.01_AccountLinkStatusAdvice_COMP.xml"],
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:AcctLkCreReq/u:Id/u:Id"
+                }
+        },
+        {
+                "query": "t2s.AccountLinkMaintenanceRequest.DRAFT2reda.050.001.01.xsd",
+                "queryMatch": "COMP",
+                "responseFormat": "t2s.AccountLinkCreationRequest.DRAFT2reda.051.001.01.xsd",
+                "responseTemplate": "reda.051.001.01_AccountLinkStatusAdvice.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:AcctLkCreReq/u:Id/u:Id"
+                }
+        },
+        {
+                "query": "t2s.GetLimit.DRAFT6camt.009.001.05.xsd",
+                "queryMatch": "LIMI",
+                "responseFormat": "t2s.ReturnLimit.DRAFT6camt.010.001.05.xsd",
+                "responseTemplate": "camt.010.001.05_LimitResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetLmt/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetAccount.DRAFT7camt.003.001.05.xsd",
+                "queryMatch": "OACC",
+                "responseFormat": "t2s.ReturnAccount.DRAFT8camt.004.001.05.xsd",
+                "responseTemplate": "camt.004.001.05_OutstandingAutocollateralisationCreditResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetAcct/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetBusinessDayInformation.DRAFT6camt.018.001.03.xsd",
+                "queryMatch": "DIAR",
+                "responseFormat": "t2s.ReturnBusinessDayInformation.DRAFT7camt.019.001.04.xsd",
+                "responseTemplate": "camt.019.001.04_GetBusinessDayInfoDiaryResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetBizDayInf/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetBusinessDayInformation.DRAFT6camt.018.001.03.xsd",
+                "queryMatch": "CALE",
+                "responseFormat": "t2s.ReturnBusinessDayInformation.DRAFT7camt.019.001.04.xsd",
+                "responseTemplate": "camt.019.001.04_GetBusinessDayInfoCalendarResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetBizDayInf/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.LiquidityCreditTransfer.DRAFT7camt.050.001.03.xsd",
+                "queryMatch": "SACC",
+                "responseFormat": ["t2s.Receipt.DRAFT6camt.025.001.03.xsd","t2s.DebitCreditNotification.camt.054.001.03.xsd"],
+                "responseTemplate": ["camt.025.001.03_AcceptedLiquidityTransfer.xml","camt.054.001.03_ConfirmationOfDebit.xml"],
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:LqdtyCdtTrf/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.ModifyStandingOrder.DRAFT7camt.024.001.04.xsd",
+                "responseFormat": "t2s.Receipt.DRAFT6camt.025.001.03.xsd",
+                "responseTemplate": "camt.025.001.03_StandingOrderMaintenanceStatus.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:ModfyStgOrdr/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.DeleteStandingOrder.DRAFT7camt.071.001.01.xsd",
+                "responseFormat": "t2s.Receipt.DRAFT6camt.025.001.03.xsd",
+                "responseTemplate": "camt.025.001.03_StandingOrderDeletion_LTOC.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:DelStgOrdr/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetStandingOrder.DRAFT7camt.069.001.01.xsd",
+                "queryMatch": "LLIQ",
+                "responseFormat": "t2s.ReturnStandingOrder.DRAFT7camt.070.001.01.xsd",
+                "responseTemplate": "camt.070.001.01_LiquidityTransferOrderListResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetStgOrdr/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetStandingOrder.DRAFT7camt.069.001.01.xsd",
+                "queryMatch": "LDEQ",
+                "responseFormat": "t2s.ReturnStandingOrder.DRAFT7camt.070.001.01.xsd",
+                "responseTemplate": "camt.070.001.01_LiquidityTransferOrderDetailResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetStgOrdr/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.IntraBalanceMovementInstruction.DRAFT3camt.066.001.01.xsd",
+                "queryMatch": "BLKA",
+                "responseFormat": ["t2s.IntraBalanceMovementStatusAdvice.DRAFT3camt.067.001.01.xsd","t2s.IntraBalanceMovementConfirmation.DRAFT3camt.068.001.01.xsd"],
+                "responseTemplate": ["camt.067.001.01_AcceptedBlocking.xml","camt.068.001.01_BlockingFullSettlement.xml"],
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:IntraBalMvmntInstr/u:Id/u:TxId"
+                }
+        },
+        {
+                "query": "t2s.IntraBalanceMovementInstruction.DRAFT3camt.066.001.01.xsd",
+                "queryMatch": "RSVA",
+                "responseFormat": ["t2s.IntraBalanceMovementStatusAdvice.DRAFT3camt.067.001.01.xsd","t2s.IntraBalanceMovementConfirmation.DRAFT3camt.068.001.01.xsd"],
+                "responseTemplate": ["camt.067.001.01_AcceptedReservation.xml","camt.068.001.01_ReservationFullSettlement.xml"],
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:IntraBalMvmntInstr/u:Id/u:TxId"
+                }
+        },
+        {
+                "query": "t2s.IntraBalanceCancellationRequest.DRAFT3camt.072.001.01.xsd",
+                "responseFormat": "t2s.IntraBalanceCancellationStatus.DRAFT3camt.073.001.01.xsd",
+                "responseTemplate": "camt.073.001.01_IntraBalanceMovementCancellationRequestStatusAdvice_Accepted.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:IntraBalMvmntModReq/u:Id/u:Id"
+                }
+        },
+        {
+                "query": "t2s.GetAccount.DRAFT7camt.003.001.05.xsd",
+                "queryMatch": "CASF",
+                "responseFormat": "t2s.ReturnAccount.DRAFT8camt.004.001.05.xsd",
+                "responseTemplate": "camt.004.001.05_CashForecastResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetAcct/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetAccount.DRAFT7camt.003.001.05.xsd",
+                "queryMatch": "CASB",
+                "responseFormat": "t2s.ReturnAccount.DRAFT8camt.004.001.05.xsd",
+                "responseTemplate": "camt.004.001.05_DedicatedCashAccountBalanceResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetAcct/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetAccount.DRAFT7camt.003.001.05.xsd",
+                "queryMatch": "OVAL",
+                "responseFormat": "t2s.ReturnAccount.DRAFT8camt.004.001.05.xsd",
+                "responseTemplate": "camt.004.001.05_OverallLiquidityResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetAcct/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.GetLimit.DRAFT6camt.009.001.05.xsd",
+                "queryMatch": "UTIL",
+                "responseFormat": "t2s.ReturnLimit.DRAFT6camt.010.001.05.xsd",
+                "responseTemplate": "camt.010.001.05_LimitUtilisationResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:GetLmt/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.CollateralValueQuery.DRAFT3colr.001.001.01.xsd",
+                "queryMatch": "CVCQ",
+                "responseFormat": "t2s.CollateralValueReport.DRAFT3colr.002.001.01.xsd",
+                "responseTemplate": "colr.002.001.01_CollateralValuePerT2SDedicatedCashAccountResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:CollValQry/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.CollateralValueQuery.DRAFT3colr.001.001.01.xsd",
+                "queryMatch": "TCTC",
+                "responseFormat": "t2s.CollateralValueReport.DRAFT3colr.002.001.01.xsd",
+                "responseTemplate": "colr.002.001.01_TotalCollateralValuePerT2SDedicatedCashAccountResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:CollValQry/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.LimitUtilisationJournalQuery.DRAFT3camt.064.001.01.xsd",
+                "responseFormat": "t2s.LimitUtilisationJournalReport.DRAFT3camt.065.001.01.xsd",
+                "responseTemplate": "camt.065.001.01_LimitUtilisationJournalResponse.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:LmtUtlstnJrnlQry/u:MsgHdr/u:Id"
+                }
+        },
+        {
+                "query": "t2s.ModifyLimit.DRAFT6camt.011.001.05.xsd",
+                "responseFormat": "t2s.Receipt.DRAFT6camt.025.001.03.xsd",
+                "responseTemplate": "camt.025.001.03_ModifyLimitConfirmation.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:ModfyLmt/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.DeleteLimit.DRAFT6camt.012.001.05.xsd",
+                "responseFormat": "t2s.Receipt.DRAFT6camt.025.001.03.xsd",
+                "responseTemplate": "camt.025.001.03_DeleteLimitConfirmation_Rejected.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:DelLmt/u:MsgHdr/u:MsgId"
+                }
+        },
+        {
+                "query": "t2s.EligibleSecuritiesCreationRequest.DRAFT4reda.025.001.01.xsd",
+                "responseFormat": "t2s.CollateralDataStatusAdvice.DRAFT4reda.028.001.01.xsd",
+                "responseTemplate": "reda.028.001.01_CollateralDataStatusAdvice.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:ElgblSctiesCreReq/u:MsgId/u:Id"
+                }
+        },
+        {
+                "query": "t2s.CollateralValueCreationRequest.DRAFT4reda.024.001.01.xsd",
+                "responseFormat": "t2s.CollateralDataStatusAdvice.DRAFT4reda.028.001.01.xsd",
+                "responseTemplate": "reda.028.001.01_CollateralDataStatusAdvice.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:CollValCreReq/u:MsgId/u:Id"
+                }
+        },
+        {
+                "query": "t2s.SecuritiesSettlementConditionModificationRequest.sese.030.001.03.xsd",
+                "responseFormat": "t2s.SecuritiesSettlementConditionModificationAdvice.sese.031.001.03.xsd",
+                "responseTemplate": "sese.031.001.03_SecuritiesSettlementConditionModificationStatusAdvice_Accepted.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:SctiesSttlmCondsModReq/u:ReqDtls/u:Ref/u:MktInfrstrctrTxId"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+		"queryMatch": "camt054_debit",
+                "responseFormat": "t2s.DebitCreditNotification.camt.054.001.03.xsd",
+                "responseTemplate": "camt.054.001.03_ConfirmationOfDebit.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+			"bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+		"queryMatch": "camt004_ceiling",
+                "responseFormat": "t2s.ReturnAccount.DRAFT8camt.004.001.05.xsd",
+                "responseTemplate": "camt.004.001.05_Ceiling.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+		"queryMatch": "camt053_BankToCustomer",
+                "responseFormat": "t2s.BankToCustomerStatement.camt.053.001.03.xsd",
+                "responseTemplate": "camt.053.001.03_BankToCustomerStatement.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+			"id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+                "queryMatch": "sese032_TransactionNotification",
+                "displayError": "Off",
+                "responseFormat": "t2s.SecuritiesSettlementTransactionNotification.sese.032.001.03.xsd",
+                "responseTemplate": "sese.032.001.03_SecuritiesSettlementTransactionGenerationNotification_Repo.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+                "queryMatch": "sese025_TransactionConfirmation",
+                "responseFormat": "t2s.SecuritiesTransactionConfirmation.sese.025.001.03.xsd",
+                "responseTemplate": "sese.025.001.03_SecuritiesSettlementTransactionConfirmation.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+                "queryMatch": "semt015_MovementConfirmation",
+                "responseFormat": "t2s.IntraPositionMovementConfirmation.semt.015.001.03.xsd",
+                "responseTemplate": "semt.015.001.03_IntraPositionMovementConfirmation.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+                "queryMatch": "sese031_ModificationStatus",
+                "responseFormat": "t2s.SecuritiesSettlementConditionModificationAdvice.sese.031.001.03.xsd",
+                "responseTemplate": "sese.031.001.03_SecuritiesSettlementConditionModificationStatusAdvice_Executed.xml",
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        },
+        {
+                "query": "isis.generic.xsd",
+                "queryMatch": "sese02425_MovementConfirmation",
+                "responseFormat": ["t2s.SecuritiesSettlementTransactionStatusAdvice.sese.024.001.03.xsd","t2s.SecuritiesTransactionConfirmation.sese.025.001.03.xsd"],
+                "responseTemplate": ["sese.024.001.03_SecuritiesSettlementTransactionStatusAdvice_Accepted.xml","sese.025.001.03_SecuritiesSettlementTransactionConfirmation.xml"],
+                "errorTemplate": "errorTemplate.xml",
+                "parameters": {
+                        "id": "/u:Document/u:QueryParams/u:Param[@name='id']",
+                        "bic": "/u:Document/u:QueryParams/u:Param[@name='bic']"
+                }
+        }]
+}

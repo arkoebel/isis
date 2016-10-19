@@ -1,0 +1,36 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT6reda.021.001.01">
+  <SctiesAcctRpt>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <OrgnlBizQry>
+        <MsgId><?= $vars['id']?></MsgId>
+      </OrgnlBizQry>
+    </MsgHdr>
+    <Pgntn>
+	<PgNb>1</PgNb>
+	<LastPgInd>true</LastPgInd>
+    </Pgntn>		
+    <RptOrErr>
+      <SctiesAcctRpt>
+        <SctiesAcctId>
+          <Id>SAFR1</Id>
+        </SctiesAcctId>
+        <SctiesAcctOrErr>
+          <SctiesAcct>
+            <OpngDt>2011-01-01</OpngDt>
+            <HldInd>true</HldInd>
+            <NegPos>false</NegPos>
+            <Tp>CSDP</Tp>
+            <AcctOwnr>
+              <RltdPtyId>SOGEFRPPLMA</RltdPtyId>
+              <RspnsblPtyId>SICVFRPPXXX</RspnsblPtyId>
+            </AcctOwnr>
+            <PtyTp>CSDP</PtyTp>
+            <EndInvstrFlg>NONE</EndInvstrFlg>
+            <PricgSchme>SACC</PricgSchme>
+          </SctiesAcct>
+        </SctiesAcctOrErr>
+      </SctiesAcctRpt>
+    </RptOrErr>
+  </SctiesAcctRpt>
+</Document>

@@ -1,0 +1,46 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT6reda.021.001.01">
+  <SctiesAcctRpt>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <OrgnlBizQry>
+        <MsgId><?= $vars['id']?></MsgId>
+      </OrgnlBizQry>
+    </MsgHdr>
+    <Pgntn>
+      <PgNb>1</PgNb>
+      <LastPgInd>true</LastPgInd>
+    </Pgntn>
+    <RptOrErr>
+      <SctiesAcctRpt>
+        <SctiesAcctId>
+          <Id>SAFR1</Id>
+        </SctiesAcctId>
+        <SctiesAcctOrErr>
+          <SctiesAcct>
+            <AcctOwnr>
+              <RltdPtyId>SOGEFRPPLMA</RltdPtyId>
+              <RspnsblPtyId>SICVFRPPXXX</RspnsblPtyId>
+            </AcctOwnr>
+            <EndInvstrFlg>NONE</EndInvstrFlg>
+            <PricgSchme>SACC</PricgSchme>
+          </SctiesAcct>
+        </SctiesAcctOrErr>
+      </SctiesAcctRpt>
+      <SctiesAcctRpt>
+        <SctiesAcctId>
+          <Id>SAIT2</Id>
+        </SctiesAcctId>
+        <SctiesAcctOrErr>
+          <SctiesAcct>
+            <AcctOwnr>
+              <RltdPtyId>SOGEITPPXXX</RltdPtyId>
+              <RspnsblPtyId>BITAITPPXXX</RspnsblPtyId>
+            </AcctOwnr>
+            <EndInvstrFlg>NONE</EndInvstrFlg>
+            <PricgSchme>SACC</PricgSchme>
+          </SctiesAcct>
+        </SctiesAcctOrErr>
+      </SctiesAcctRpt>
+    </RptOrErr>
+  </SctiesAcctRpt>
+</Document>

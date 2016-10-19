@@ -1,0 +1,46 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT3colr.002.001.01">
+	<CollValRpt>
+		<MsgHdr>
+			<MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+			<ReqTp>
+				<Prtry>
+					<Id>TCTC</Id>
+				</Prtry>
+			</ReqTp>
+			<OrgnlBizQry>
+				<MsgId><?= $vars['id']?></MsgId>
+			</OrgnlBizQry>
+		</MsgHdr>
+		<RptOrErr>
+			<BizRpt>
+				<Acct>
+					<Id>
+						<Othr>
+							<Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+						</Othr>
+					</Id>
+					<Ccy>EUR</Ccy>
+					<Ownr>
+						<Nm>SG 2</Nm>
+						<Id>
+							<OrgId>
+								<AnyBIC>SOGEFRP0T2S</AnyBIC>
+							</OrgId>
+						</Id>
+					</Ownr>
+					<Svcr>
+						<FinInstnId>
+							<BICFI>BDFEFRP0T2S</BICFI>
+						</FinInstnId>
+					</Svcr>
+				</Acct>
+				<CollValRpt>
+					<CollVal>
+						<DataAccsTm>2014-08-13T09:30:47Z</DataAccsTm>
+						<TtlCollValtn Ccy="EUR">123456789.10</TtlCollValtn>
+					</CollVal>
+				</CollValRpt>
+			</BizRpt>
+		</RptOrErr>
+	</CollValRpt>
+</Document>

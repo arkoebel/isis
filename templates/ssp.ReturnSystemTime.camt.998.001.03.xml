@@ -1,0 +1,24 @@
+<Document xmlns="urn:swift:xsd:camt.998.001.03">
+  <PrtryMsg>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars["id"],2)?></MsgId>
+    </MsgHdr>
+    <Rltd>
+      <Ref><?= $vars["id"]?></Ref>
+    </Rltd>
+    <PrtryData>
+      <Tp>ReturnSystemTime</Tp>
+      <Data>
+        <SspPrtryDt>
+          <BizRpt>
+            <SysTmRpt>
+              <SysTmDtls>
+                <SysTm><?= gmdate("Y-m-d\TH:i:s\Z")?></SysTm>
+              </SysTmDtls>
+            </SysTmRpt>
+          </BizRpt>
+        </SspPrtryDt>
+      </Data>
+    </PrtryData>
+  </PrtryMsg>
+</Document>

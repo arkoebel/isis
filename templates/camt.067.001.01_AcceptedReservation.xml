@@ -1,0 +1,56 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT3camt.067.001.01">
+  <IntraBalMvmntStsAdvc>
+    <Id>
+      <Id>RE<?= substr($vars['id'],2)?></Id>
+    </Id>
+    <TxId>
+      <AcctOwnrTxId><?= $vars['id']?></AcctOwnrTxId>
+      <MktInfrstrctrTxId>T1390</MktInfrstrctrTxId>
+    </TxId>
+    <PrcgSts>
+      <AckdAccptd>
+        <NoSpcfdRsn>NORE</NoSpcfdRsn>
+      </AckdAccptd>
+    </PrcgSts>
+    <CshAcct>
+      <Id>
+        <Othr>
+          <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+        </Othr>
+      </Id>
+      <Ownr>
+        <Id>
+          <OrgId>
+            <AnyBIC>SOGEFRP0T2S</AnyBIC>
+          </OrgId>
+        </Id>
+      </Ownr>
+    </CshAcct>
+    <!--UndrlygIntraBal>
+      <SttlmAmt>
+        <AmtWthCcy Ccy="EUR">18500</AmtWthCcy>
+      </SttlmAmt>
+      <SttlmDt>
+        <Dt>2015-01-09</Dt>
+      </SttlmDt>
+      <BalFr>
+        <Tp>
+          <Prtry>
+            <Id>DLVR</Id>
+            <Issr>T2S</Issr>
+            <SchmeNm>RT</SchmeNm>
+          </Prtry>
+        </Tp>
+      </BalFr>
+      <BalTo>
+        <Tp>
+          <Prtry>
+            <Id>BLKA</Id>
+            <Issr>T2S</Issr>
+            <SchmeNm>RT</SchmeNm>
+          </Prtry>
+        </Tp>
+      </BalTo>
+    </UndrlygIntraBal-->
+  </IntraBalMvmntStsAdvc>
+</Document>

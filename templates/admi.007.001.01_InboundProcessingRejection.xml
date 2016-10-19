@@ -1,0 +1,17 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT2admi.007.001.01">
+	<RctAck>
+		<MsgId>
+			<MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+		</MsgId>
+		<Rpt>
+			<RltdRef>
+				<Ref><?= $vars['id']?></Ref>
+			</RltdRef>
+			<ReqHdlg>
+				<StsCd>I012</StsCd>
+				<Desc>IICR001-The party technical address does not exist</Desc>
+			</ReqHdlg>
+		</Rpt>
+	</RctAck>
+</Document>
+

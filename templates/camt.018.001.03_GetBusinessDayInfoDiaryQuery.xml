@@ -1,0 +1,22 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.018.001.03">
+  <GetBizDayInf>
+    <MsgHdr>
+      <MsgId>1234567890ABCDEF</MsgId>
+      <ReqTp>
+        <Prtry>
+          <Id>DIAR</Id>
+          <Issr>T2S</Issr>
+        </Prtry>
+      </ReqTp>
+    </MsgHdr>
+    <BizDayInfQryDef>
+      <Crit>
+        <NewCrit>
+          <SchCrit>
+            <SysDt>2010-01-01</SysDt>
+          </SchCrit>
+        </NewCrit>
+      </Crit>
+    </BizDayInfQryDef>
+  </GetBizDayInf>
+</Document>

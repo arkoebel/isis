@@ -1,0 +1,27 @@
+<Document xmlns="urn:eurosystem:xsd:reda.050.001.01">
+  <AcctLkMntncReq>
+    <Id>
+      <Id>1234567890ABCDEF</Id>
+    </Id>
+    <AcctLkId>
+      <SctiesAcct>
+        <Id>SAFR1</Id>
+      </SctiesAcct>
+      <CshAcct>
+        <Id>
+          <Othr>
+            <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+          </Othr>
+        </Id>
+      </CshAcct>
+      <VldFr>
+        <Dt>2015-06-01</Dt>
+      </VldFr>
+    </AcctLkId>
+    <Upd>
+      <VldTo>
+        <Dt>2015-07-01</Dt>
+      </VldTo>
+    </Upd>
+  </AcctLkMntncReq>
+</Document>

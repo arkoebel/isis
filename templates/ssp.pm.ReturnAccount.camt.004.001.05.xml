@@ -1,0 +1,45 @@
+<Document xmlns="urn:swift:xsd:camt.004.001.05">
+  <RtrAcct>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <OrgnlBizQry>
+        <MsgId><?=$vars['id']?></MsgId>
+      </OrgnlBizQry>
+    </MsgHdr>
+    <? $response = databaseQuery($pdo,'select account,type,sens,amount from account where bic=:bic',array("bic"=>$vars["bic"])); ?>
+    <RptOrErr>
+      <AcctRpt>
+        <AcctId>
+          <Othr>
+            <Id><?=$response[0]['account']?></Id>
+          </Othr>
+        </AcctId>
+        <AcctOrErr>
+          <Acct>
+            <Tp>
+              <Cd>SACC</Cd>
+            </Tp>
+            <Ownr>
+              <Id>
+                <OrgId>
+                  <AnyBIC><?=$response[0]['account']?></AnyBIC>
+                </OrgId>
+              </Id>
+            </Ownr>
+            <? foreach($response as $row) { ?>
+            <MulBal>
+              <Amt><?= $row['amount']?></Amt>
+              <CdtDbtInd><?= $row['sens']?></CdtDbtInd>
+              <Tp>
+                <Cd><?= $row['type']?></Cd>
+              </Tp>
+              <Sts>PDNG</Sts>
+            </MulBal>
+            <? } ?>
+          </Acct>
+        </AcctOrErr>
+      </AcctRpt>
+    </RptOrErr>
+  </RtrAcct>
+</Document>
+

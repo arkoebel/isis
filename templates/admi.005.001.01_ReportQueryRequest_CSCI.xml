@@ -1,0 +1,21 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT3admi.005.001.01">
+	<RptQryReq>
+		<MsgHdr>
+			<MsgId>1234567890ABCDEF</MsgId>
+		</MsgHdr>
+		<RptQryCrit>
+			<SchCrit>
+				<RptNm>CSCI</RptNm>
+				<PtyId>
+					<AnyBIC>SOGEFRP0T2S</AnyBIC>
+				</PtyId>
+				<RspnsblPtyId>
+					<AnyBIC>BDFEFRP0T2S</AnyBIC>
+				</RspnsblPtyId>
+				<DtSch>
+					<EQDt>2014-08-13</EQDt>
+				</DtSch>
+			</SchCrit>
+		</RptQryCrit>
+	</RptQryReq>
+</Document>

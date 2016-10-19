@@ -1,0 +1,25 @@
+<Document xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:iso:std:iso:20022:tech:xsd:sese.030.001.03">
+  <SctiesSttlmCondsModReq>
+    <AcctOwnr>
+      <AnyBIC>SOGEFRP0T2S</AnyBIC>
+    </AcctOwnr>
+    <SfkpgAcct>
+      <Id>SAFR1</Id>
+    </SfkpgAcct>
+    <ReqDtls>
+      <Ref>
+        <MktInfrstrctrTxId>MsgRef</MktInfrstrctrTxId>
+      </Ref>
+      <HldInd>
+        <Ind>false</Ind>
+        <Rsn>
+          <Cd>
+            <Cd>CDEL</Cd>
+          </Cd>
+          <AddtlInf>00055</AddtlInf>
+        </Rsn>
+      </HldInd>
+    </ReqDtls>
+  </SctiesSttlmCondsModReq>
+</Document>

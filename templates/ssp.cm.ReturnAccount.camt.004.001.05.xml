@@ -1,0 +1,37 @@
+<Document xmlns="urn:swift:xsd:camt.004.001.05">
+  <RtrAcct>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars["id"],2)?></MsgId>
+      <OrgnlBizQry>
+        <MsgId><?=$vars["id"]?></MsgId>
+      </OrgnlBizQry>
+    </MsgHdr>
+    <RptOrErr>
+      <AcctRpt>
+        <AcctId>
+          <Othr>
+            <Id><?=$vars["bic"]?></Id>
+          </Othr>
+        </AcctId>
+        <AcctOrErr>
+          <Acct>
+            <Tp>
+              <Cd>SACC</Cd>
+            </Tp>
+            <MulBal>
+              <Amt><?= databaseValueQuery($pdo,"select question_id from responses where lower(userid)=:userid",array("userid"=>$vars["bic"]))?></Amt>
+              <CdtDbtInd>CRDT</CdtDbtInd>
+              <Tp>
+                <Cd>CRRT</Cd>
+              </Tp>
+              <ValDt>
+                <DtTm>2014-09-19T01:18:33</DtTm>
+              </ValDt>
+            </MulBal>
+          </Acct>
+        </AcctOrErr>
+      </AcctRpt>
+    </RptOrErr>
+  </RtrAcct>
+</Document>
+

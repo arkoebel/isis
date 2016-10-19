@@ -1,0 +1,71 @@
+<Document xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT3camt.065.001.01">
+  <LmtUtltsnJrnlRpt>
+    <MsgHdr>
+      <Id>RE<?= substr($vars['id'],2)?></Id>
+    </MsgHdr>
+    <Pgntn>
+      <PgNb>1</PgNb>
+      <LastPgInd>true</LastPgInd>
+    </Pgntn>
+    <BizQryRef>
+      <QryRef><?= $vars['id']?></QryRef>
+    </BizQryRef>
+    <RptOrErr>
+      <BizRpt>
+        <LmtId>
+          <AcctId>
+            <Othr>
+              <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+            </Othr>
+          </AcctId>
+          <Tp>ACOL</Tp>
+          <LmtCcy>EUR</LmtCcy>
+          <AcctOwnr>SOGEFRP0T2S</AcctOwnr>
+          <BilLmtCtrPtyId>
+            <Id>SOGEFRP0T2S</Id>
+            <RspnsblPtyId>
+              <NCBId>BDFEFRP0T2S</NCBId>
+            </RspnsblPtyId>
+          </BilLmtCtrPtyId>
+        </LmtId>
+        <LmtRpt>
+          <LmtJrnl>
+            <Lmt>
+              <Amt>
+                <Amt>
+                  <AmtWthCcy Ccy="EUR">100000</AmtWthCcy>
+                </Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+              </Amt>
+              <UtlstnAmt>
+                <Amt>
+                  <AmtWthCcy Ccy="EUR">40000</AmtWthCcy>
+                </Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+              </UtlstnAmt>
+              <AvlblAmt>
+                <Amt>
+                  <AmtWthCcy Ccy="EUR">60000</AmtWthCcy>
+                </Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+              </AvlblAmt>
+            </Lmt>
+            <JrnlActvtyDt>2015-01-09</JrnlActvtyDt>
+            <JrnlNtry>
+              <JrnlDt>
+                <Dt>2015-01-09</Dt>
+              </JrnlDt>
+              <CdtDbtInd>DBIT</CdtDbtInd>
+              <Amt>
+                <AmtWthCcy Ccy="EUR">15000</AmtWthCcy>
+              </Amt>
+              <NtryRef>T2SMsgRef</NtryRef>
+              <TxId>MsgRef</TxId>
+              <AcctSvcrRef>MsgRef</AcctSvcrRef>
+            </JrnlNtry>
+          </LmtJrnl>
+        </LmtRpt>
+      </BizRpt>
+    </RptOrErr>
+  </LmtUtltsnJrnlRpt>
+</Document>

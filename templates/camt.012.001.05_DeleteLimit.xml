@@ -1,0 +1,35 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.012.001.05">
+  <DelLmt>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <CreDtTm>2010-09-27T05:10:10</CreDtTm>
+    </MsgHdr>
+    <LmtDtls>
+      <CurLmtId>
+        <SysId>
+          <MktInfrstrctrId>
+            <Prtry>BDFEFRP0T2S</Prtry>
+          </MktInfrstrctrId>
+        </SysId>
+        <BilLmtCtrPtyId>
+          <FinInstnId>
+            <BIC>SOGEFRP0T2S</BIC>
+          </FinInstnId>
+        </BilLmtCtrPtyId>
+        <Tp>
+          <Cd>ACOL</Cd>
+        </Tp>
+        <AcctOwnr>
+          <FinInstnId>
+            <BIC>SOGEFRP0T2S</BIC>
+          </FinInstnId>
+        </AcctOwnr>
+        <AcctId>
+          <Othr>
+            <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+          </Othr>
+        </AcctId>
+      </CurLmtId>
+    </LmtDtls>
+  </DelLmt>
+</Document>

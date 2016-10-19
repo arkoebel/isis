@@ -1,0 +1,53 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.010.001.05">
+  <RtrLmt>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <CreDtTm>2010-09-27T05:10:10</CreDtTm>
+      <OrgnlBizQry>
+        <MsgId><?= $vars['id']?></MsgId>
+      </OrgnlBizQry>
+    </MsgHdr>
+    <RptOrErr>
+      <BizRpt>
+        <CurLmt>
+          <LmtId>
+            <SysId>
+              <MktInfrstrctrId>
+                <Prtry>SOGEFRP0T2S</Prtry>
+              </MktInfrstrctrId>
+            </SysId>
+            <BilLmtCtrPtyId>
+              <FinInstnId>
+                <BICFI>SOGEFRP0T2S</BICFI>
+              </FinInstnId>
+            </BilLmtCtrPtyId>
+            <Tp>
+              <Cd>ACOL</Cd>
+            </Tp>
+            <AcctOwnr>
+              <FinInstnId>
+                <BICFI>SOGEFRP0T2S</BICFI>
+              </FinInstnId>
+            </AcctOwnr>
+            <AcctId>
+              <Othr>
+                <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+              </Othr>
+            </AcctId>
+          </LmtId>
+          <LmtOrErr>
+            <Lmt>
+              <Amt>
+                <AmtWthCcy Ccy="EUR">560000</AmtWthCcy>
+              </Amt>
+              <CdtDbtInd>CRDT</CdtDbtInd>
+              <StartDtTm>
+                <Dt>2014-01-01</Dt>
+              </StartDtTm>
+            </Lmt>
+          </LmtOrErr>
+        </CurLmt>
+      </BizRpt>
+    </RptOrErr>
+  </RtrLmt>
+</Document>

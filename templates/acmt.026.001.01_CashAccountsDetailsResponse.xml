@@ -1,0 +1,63 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:acmt.026.001.01">
+  <AcctListRpt>
+    <Refs>
+      <ReqTp>VIEW</ReqTp>
+      <MsgId>
+        <Id>RE<?= substr($vars["id"],2)?></Id>
+        <CreDtTm><?= gmdate("Y-m-d\TH:i:s")?></CreDtTm>
+      </MsgId>
+      <PrcId>
+        <Id>RE2<?= substr($vars["id"],3)?></Id>
+        <CreDtTm><?= gmdate("Y-m-d\TH:i:s")?></CreDtTm>
+      </PrcId>
+      <AckdMsgId>
+        <Id>AC<?= substr($vars["id"],2)?></Id>
+        <CreDtTm><?= gmdate("Y-m-d\TH:i:s")?></CreDtTm>
+      </AckdMsgId>
+    </Refs>
+    <AcctSvcrId>
+      <FinInstnId>
+        <BIC>BITAITPPXXX</BIC>
+      </FinInstnId>
+    </AcctSvcrId>
+    <Org>
+      <FullLglNm>BITAITPPXXX</FullLglNm>
+      <CtryOfOpr>FR</CtryOfOpr>
+      <LglAdr/>
+      <OrgId>
+        <BIC>SOGEITPPXXX</BIC>
+      </OrgId>
+    </Org>
+    <RptOrErr>
+      <AcctRpt>
+		<Acct>
+			<Id>
+				<Othr>
+					<Id>CITEURSOGEITPPXXXDCAIT1</Id>
+				</Othr>
+			</Id>
+			<Tp>
+				<Prtry>CSHA</Prtry>
+			</Tp>
+			<Ccy>EUR</Ccy>
+			<FlrNtfctnAmt>1000</FlrNtfctnAmt>
+			<ClngNtfctnAmt>1000000</ClngNtfctnAmt>      
+			<OpngDt>2011-01-01</OpngDt>
+		</Acct>
+		<AcctOwnr>
+			<BIC>SOGEITPPXXX</BIC>
+		</AcctOwnr>
+		<Prtry>
+			<Id>BITAITPPXXX</Id>
+			<SchmeNm>BNCB</SchmeNm>
+			<Issr>T2S</Issr>
+		</Prtry>
+		<Prtry>
+			<Id>PMBK</Id>
+			<SchmeNm>PTYP</SchmeNm>
+			<Issr>T2S</Issr>
+		</Prtry>
+      </AcctRpt>
+    </RptOrErr>
+  </AcctListRpt>
+</Document>

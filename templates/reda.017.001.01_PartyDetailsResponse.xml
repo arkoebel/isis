@@ -1,0 +1,37 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT3reda.017.001.01">
+  <PtyRpt>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <OrgnlBizQry>
+        <MsgId><?= $vars['id']?></MsgId>
+      </OrgnlBizQry>
+    </MsgHdr>
+    <RptOrErr>
+      <PtyRpt>
+        <PtyId>
+          <RltdPtyId>SOGEFRP0T2S</RltdPtyId>
+          <RspnsblPtyId>BDFEFRP0T2S</RspnsblPtyId>
+        </PtyId>
+        <PtyOrErr>
+   <SysPty>
+    <OpngDt>2011-01-01</OpngDt>
+    <Tp>PMBK</Tp>
+    <TechAdr>
+     <TechAdr>ABCD</TechAdr>
+    </TechAdr>
+    <Id>
+     <VldFr>2011-01-01</VldFr>
+     <Id>SOGEFRP0T2S</Id>
+    </Id>
+    <Nm>
+     <VldFr>2011-01-01</VldFr>
+           <Nm>SG PAYMENT BANK</Nm>
+           <ShrtNm>SG</ShrtNm>
+       </Nm>
+   </SysPty>
+        </PtyOrErr>
+      </PtyRpt>
+    </RptOrErr>
+  </PtyRpt>
+</Document>
+

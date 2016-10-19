@@ -1,0 +1,28 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT2reda.051.001.01">
+  <AcctLkStsAdvc>
+    <Id>
+      <Id>RE<?= substr($vars['id'],2)?></Id>
+    </Id>
+    <ReqMsgId>
+      <Id><?= $vars['id']?></Id>
+    </ReqMsgId>
+    <AcctLkSts>
+      <Sts>COMP</Sts>
+    </AcctLkSts>
+    <AcctLkId>
+      <SctiesAcct>
+        <Id>SAFR1</Id>
+      </SctiesAcct>
+      <CshAcct>
+        <Id>
+          <Othr>
+            <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+          </Othr>
+        </Id>
+      </CshAcct>
+      <VldFr>
+        <Dt>2015-06-01</Dt>
+      </VldFr>
+    </AcctLkId>
+  </AcctLkStsAdvc>
+</Document>

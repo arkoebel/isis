@@ -1,0 +1,13 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT2reda.051.001.01">
+  <AcctLkStsAdvc>
+    <Id>
+      <Id>RE<?= substr($vars['id'],2)?></Id>
+    </Id>
+    <ReqMsgId>
+      <Id><?= $vars['id']?></Id>
+    </ReqMsgId>
+    <AcctLkSts>
+      <Sts>QUED</Sts>
+    </AcctLkSts>
+  </AcctLkStsAdvc>
+</Document>

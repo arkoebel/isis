@@ -1,0 +1,18 @@
+<Document xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT3camt.064.001.01">
+  <LmtUtlstnJrnlQry>
+    <MsgHdr>
+      <Id>1234567890ABCDEF</Id>
+    </MsgHdr>
+    <SchCrit>
+      <LmtTp>ACOL</LmtTp>
+      <JrnlActvtyDt>2015-01-09</JrnlActvtyDt>
+      <BilLmtCtrPtyId>
+        <Id>SOGEFRP0T2S</Id>
+        <RspnsblPtyId>
+          <NCBId>BDFEFRP0T2S</NCBId>
+        </RspnsblPtyId>
+      </BilLmtCtrPtyId>
+    </SchCrit>
+  </LmtUtlstnJrnlQry>
+</Document>

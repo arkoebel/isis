@@ -1,0 +1,33 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.003.001.05">
+	<GetAcct>
+		<MsgHdr>
+			<MsgId>1234567890ABCDEF</MsgId>
+			<ReqTp>
+				<Prtry>
+					<Id>OVAL</Id>
+				</Prtry>
+			</ReqTp>
+		</MsgHdr>
+		<AcctQryDef>
+			<AcctCrit>
+				<NewCrit>
+					<SchCrit>
+						<AcctOwnr>
+							<Id>
+								<OrgId>
+									<AnyBIC>SOGEFRP0T2S</AnyBIC>
+								</OrgId>
+							</Id>
+						</AcctOwnr>
+						<AcctSvcr>
+							<FinInstnId>
+								<BICFI>BDFEFRP0T2S</BICFI>
+							</FinInstnId>
+						</AcctSvcr>
+					</SchCrit>
+				</NewCrit>
+			</AcctCrit>
+		</AcctQryDef>
+	</GetAcct>
+</Document>
+

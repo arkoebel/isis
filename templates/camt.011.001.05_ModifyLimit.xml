@@ -1,0 +1,45 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.011.001.05">
+  <ModfyLmt>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+      <CreDtTm>2010-09-27T05:10:10</CreDtTm>
+    </MsgHdr>
+    <LmtDtls>
+      <LmtId>
+        <Cur>
+          <SysId>
+            <MktInfrstrctrId>
+              <Prtry>BDFEFRP0T2S</Prtry>
+            </MktInfrstrctrId>
+          </SysId>
+          <BilLmtCtrPtyId>
+            <FinInstnId>
+              <BICFI>SOGEFRP0T2S</BICFI>
+            </FinInstnId>
+          </BilLmtCtrPtyId>
+          <Tp>
+            <Cd>ACOL</Cd>
+          </Tp>
+          <AcctOwnr>
+            <FinInstnId>
+              <BICFI>SOGEFRP0T2S</BICFI>
+            </FinInstnId>
+          </AcctOwnr>
+          <AcctId>
+            <Othr>
+              <Id>CFREURSOGEFRP0T2S000000000DCASOGE1</Id>
+            </Othr>
+          </AcctId>
+        </Cur>
+      </LmtId>
+      <NewLmtValSet>
+        <StartDtTm>
+          <Dt>2010-10-01</Dt>
+        </StartDtTm>
+        <Amt>
+          <AmtWthCcy Ccy="EUR">560000</AmtWthCcy>
+        </Amt>
+      </NewLmtValSet>
+    </LmtDtls>
+  </ModfyLmt>
+</Document>

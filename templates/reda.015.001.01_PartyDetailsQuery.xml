@@ -1,0 +1,21 @@
+<Document xmlns="urn:eurosystem:xsd:reda.015.001.01">
+  <PtyQry>
+    <MsgId>
+      <MsgId>1234567890ABCDEF</MsgId>
+      <ReqTp>
+        <Prtry>
+          <Id>PYRD</Id>
+          <SchmeNm>PTYQ</SchmeNm>
+          <Issr>T2S</Issr>
+        </Prtry>
+      </ReqTp>
+    </MsgId>
+    <SchCrit>
+      <Tp>PMBK</Tp>
+      <CSDOrNCB>
+        <NCBId>SOGEFRP0T2S</NCBId>
+      </CSDOrNCB>
+    </SchCrit>
+  </PtyQry>
+</Document>
+

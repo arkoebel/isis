@@ -1,0 +1,15 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.025.001.03">
+  <Rct>
+    <MsgHdr>
+      <MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+    </MsgHdr>
+    <RctDtls>
+      <OrgnlMsgId>
+        <MsgId>MsgRef</MsgId>
+      </OrgnlMsgId>
+      <ReqHdlg>
+        <StsCd>LIMC</StsCd>
+      </ReqHdlg>
+    </RctDtls>
+  </Rct>
+</Document>

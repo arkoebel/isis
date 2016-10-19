@@ -1,0 +1,24 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT4reda.028.001.01">
+  <CollDataStsAdvc>
+    <MsgId>
+      <Id>RE<?= substr($vars['id'],2)?></Id>
+    </MsgId>
+    <OrgnlMsgId>
+      <Id><?= $vars['id']?></Id>
+    </OrgnlMsgId>
+    <StsRsn>
+      <Sts>COMP</Sts>
+      <Rsn>
+        <Rsn>
+          <Prtry>RSN1</Prtry>
+        </Rsn>
+        <AddtlInf>Additional Info</AddtlInf>
+      </Rsn>
+	  <Rsn>
+        <Rsn>
+          <Prtry>RSN2</Prtry>
+        </Rsn>
+      </Rsn>
+    </StsRsn>
+  </CollDataStsAdvc>
+</Document>

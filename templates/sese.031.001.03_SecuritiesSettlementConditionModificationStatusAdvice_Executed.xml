@@ -1,0 +1,22 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:sese.031.001.03">
+	<SctiesSttlmCondModStsAdvc>
+		<ReqRef>
+			<Id>RE<?= substr($vars['id'],2)?></Id>
+		</ReqRef>
+		<AcctOwnr>
+			<AnyBIC>SOGEFRP0T2S</AnyBIC>
+		</AcctOwnr>
+		<SfkpgAcct>
+			<Id>SAFR1</Id>
+		</SfkpgAcct>
+		<ReqDtls>
+			<Ref>
+				<AcctOwnrTxId>MsgRef</AcctOwnrTxId>
+			</Ref>
+			<PrtlSttlmInd>PART</PrtlSttlmInd>
+		</ReqDtls>
+		<PrcgSts>
+			<Cmpltd/>
+		</PrcgSts>
+	</SctiesSttlmCondModStsAdvc>
+</Document>

@@ -1,0 +1,24 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:DRAFT3colr.002.001.01">
+	<CollValRpt>
+		<MsgHdr>
+			<MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+			<ReqTp>
+				<Prtry>
+					<Id>CVSQ</Id>
+				</Prtry>
+			</ReqTp>
+			<OrgnlBizQry>
+				<MsgId><?= $vars['id']?></MsgId>
+			</OrgnlBizQry>
+		</MsgHdr>
+		<RptOrErr>
+			<OprlErr>
+				<Err>
+					<Prtry>Q030</Prtry>
+				</Err>
+				<Desc>QMPC031-The specified T2S Dedicated Cash Account Number is not known in T2S.</Desc>
+			</OprlErr>
+		</RptOrErr>
+	</CollValRpt>
+</Document>
+

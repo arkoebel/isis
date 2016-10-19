@@ -1,0 +1,18 @@
+<Document xmlns="urn:eurosystem:xsd:DRAFT4reda.024.001.01">
+  <CollValCreReq>
+    <MsgId>
+      <Id>1234567890ABCDEF</Id>
+    </MsgId>
+    <CollVal>
+      <SctyId>AMAZONXXXXXX</SctyId>
+      <ValtnDt>2008-09-29</ValtnDt>
+      <ValtnCcy>EUR</ValtnCcy>
+      <ValtnPric>
+        <Amt>1000.0000000000</Amt>
+      </ValtnPric>
+    </CollVal>
+    <NCBOrPmtBk>
+      <NCBId>BNPAFRPPXXX</NCBId>
+    </NCBOrPmtBk>
+  </CollValCreReq>
+</Document>

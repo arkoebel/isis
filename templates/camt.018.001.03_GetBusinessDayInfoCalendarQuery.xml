@@ -1,0 +1,28 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.018.001.03">
+	<GetBizDayInf>
+		<MsgHdr>
+			<MsgId>RE<?= substr($vars['id'],2)?></MsgId>
+			<ReqTp>
+				<Prtry>
+					<Id>CALE</Id>
+					<Issr>T2S</Issr>
+				</Prtry>
+			</ReqTp>
+		</MsgHdr>
+		<BizDayInfQryDef>
+			<Crit>
+				<NewCrit>
+					<SchCrit>
+						<SysCcy>USD</SysCcy>
+						<ClsrPrd>
+							<DtTmRg>
+								<FrDtTm>2014-10-10T00:01:01</FrDtTm>
+								<ToDtTm>2014-10-12T23:59:59</ToDtTm>
+							</DtTmRg>
+						</ClsrPrd>
+					</SchCrit>
+				</NewCrit>
+			</Crit>
+		</BizDayInfQryDef>
+	</GetBizDayInf>
+</Document>
